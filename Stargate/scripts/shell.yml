@@ -1,0 +1,5 @@
+- hosts: localhost
+  tasks:
+    - name: Debug
+      debug:
+        msg: '{{ content }}'

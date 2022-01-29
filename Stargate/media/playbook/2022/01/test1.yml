@@ -1,0 +1,4 @@
+- hosts: localhost
+  tasks:
+    - name: 测试 shell
+      shell: date
