@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'channels',
     'corsheaders',
     'django_filters',
     'user',
@@ -53,12 +54,15 @@ INSTALLED_APPS = [
     'autotask',
     'workorder',
     'projects',
+    'host',
+    'consumer',
     'release',
     'drf_yasg',
     'django_python3_ldap',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -66,17 +70,30 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'Stargate.urls'
+
+# 配置channel的通道层
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        "CONFIG": {
+            "hosts": ["redis://:123@127.0.0.1:6379/13"],
+            "symmetric_encryption_keys": [SECRET_KEY],
+        },
+    },
+}
+
+# 在host应用下面创建一个routing.py文件
+ASGI_APPLICATION = 'host.routing.application'
 
 # 支持跨域请求
 CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:9528',
     'http://localhost:9528',
 )
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_CREDENTIALS = False # 是否允许ajax跨域请求时携带cookie，False表示不用，我们后面也用不到cookie，所以关掉它就可以了，以防有人通过cookie来搞我们的网站
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_METHODS = (
     'DELETE',

@@ -1,6 +1,6 @@
 import logging
 import traceback
-from rest_framework.views import exception_handler
+# from rest_framework.views import exception_handler
 from django.core.exceptions import PermissionDenied
 from django.http import Http404
 from rest_framework.exceptions import ErrorDetail
@@ -8,7 +8,6 @@ from rest_framework.exceptions import ErrorDetail
 from rest_framework.views import set_rollback
 from django.db import DatabaseError
 from redis.exceptions import RedisError
-from rest_framework.response import Response
 from rest_framework import status, exceptions
 from .response import APIResponse
 
@@ -60,7 +59,7 @@ def errors_handler(exc):
 def exception_handler(exc, context):
     """
     自定义异常处理, 捕获或有异常
-    :param exc: 异常
+    :param exc: 异常类
     :param context: 抛出异常的上下文
     :return: Response响应对象
     """
@@ -77,8 +76,7 @@ def exception_handler(exc, context):
             headers['Retry-After'] = '%d' % exc.wait
         data = errors_handler(exc)
         set_rollback()
-        # response = Response(data, status=exc.status_code, headers=headers)
-        print(data)
+
         response = APIResponse(code=1, message='failed', errors=data['detail'], status=exc.status_code, headers=headers)
     elif isinstance(exc, DatabaseError) or isinstance(exc, RedisError):
         # 数据库异常

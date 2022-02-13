@@ -44,6 +44,7 @@ urlpatterns = [
     path('api/workorder/', include('workorder.urls')),
     path('api/projects/', include('projects.urls')),
     path('api/release/', include('release.urls')),
+    path('api/host/', include('host.urls')),
 
 
     # 配置drf-yasg路由
