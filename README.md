@@ -65,4 +65,9 @@
 #### 主机资源（展示）
 ![image](https://user-images.githubusercontent.com/42118870/153745564-91507e82-a731-4a64-80e3-686081db6025.png)
 #### 主机资源添加（展示）
-![image](https://user-images.githubusercontent.com/42118870/151673804-52d88a6c-a927-4c63-b262-cdcab3aee540.png)
+![image](https://user-images.githubusercontent.com/42118870/153745608-f4c4e427-25f9-4e78-aaba-123ca4953f57.png)
+#### 主机资源批量添加（Excel导入）
+![image](https://user-images.githubusercontent.com/42118870/153745620-952d1da3-d19c-4910-b470-0b37a5b59416.png)
+#### 主机webshell + 文件管理
+![Uploading image.png…]()
+
