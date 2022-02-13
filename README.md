@@ -69,5 +69,5 @@
 #### 主机资源批量添加（Excel导入）
 ![image](https://user-images.githubusercontent.com/42118870/153745620-952d1da3-d19c-4910-b470-0b37a5b59416.png)
 #### 主机webshell + 文件管理
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/42118870/153745694-71267af2-4dc8-4b20-b77f-8932d5c96691.png)
 
