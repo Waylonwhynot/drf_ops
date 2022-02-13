@@ -22,9 +22,9 @@
 </p>
 
 ## 项目简介
-- RBAC （配置权限，前端动态渲染次啊单）
+- RBAC （配置权限，前端动态渲染菜单）
 - 简单运维工单模型
-- 资产管理(支持excel导入)，支持webshell执行命令，支持向主机导入文件
+- 资产管理(支持excel导入，批量导出)，支持webshell执行命令，支持向主机导入文件
 - 发布系统：项目名称gitlab和jenkins项目名称必须一样（后面优化）
 ###  登录页面
 ![image](https://user-images.githubusercontent.com/42118870/151673686-1fc42639-1b1d-4fe0-a169-0404784b388a.png)
