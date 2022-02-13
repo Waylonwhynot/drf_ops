@@ -22,8 +22,10 @@
 </p>
 
 #### 项目简介
-RBAC+简单运维工单模型
-发布系统：项目名称gitlab和jenkins项目名称必须一样（后面优化）
+- RBAC （配置权限，前端动态渲染次啊单）
+- 简单运维工单模型
+- 资产管理(支持excel导入)
+- 发布系统：项目名称gitlab和jenkins项目名称必须一样（后面优化）
 ####  系统功能
 ![image](https://user-images.githubusercontent.com/42118870/151673686-1fc42639-1b1d-4fe0-a169-0404784b388a.png)
 ![image](https://user-images.githubusercontent.com/42118870/151673703-b5c3467e-9d92-458d-898d-86c61ebab346.png)
