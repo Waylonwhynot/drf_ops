@@ -70,4 +70,9 @@
 ![image](https://user-images.githubusercontent.com/42118870/153745620-952d1da3-d19c-4910-b470-0b37a5b59416.png)
 #### 主机webshell + 文件管理
 ![image](https://user-images.githubusercontent.com/42118870/153745694-71267af2-4dc8-4b20-b77f-8932d5c96691.png)
+### 批量任务
+![image](https://user-images.githubusercontent.com/42118870/154121342-ccec78ee-c332-4f0c-827f-c191ca1934e5.png)
+![image](https://user-images.githubusercontent.com/42118870/154121385-95feb410-680d-49a3-b0dc-e536fca88da8.png)
+
+
 
