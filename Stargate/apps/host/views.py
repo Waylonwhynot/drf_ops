@@ -24,6 +24,14 @@ class HostView(CommonModelViewSet):
     queryset = models.Host.objects.all().order_by('id')
     serializer_class = HostModelSerializer
     pagination_class = BasicPagination
+    # 基于请求中携带的查询参数完成不同环境的主机数据筛选
+    # self.request 中可以拿到请求对象
+    def get_queryset(self):
+        env_id = self.request.data.get['env_id']
+        if env_id:
+            queryset = self.queryset.filter(environments_id=env_id)
+            return queryset
+        return self.queryset
 
 
 class HostTypeAPIView(APIView):
