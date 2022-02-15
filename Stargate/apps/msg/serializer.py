@@ -1,7 +1,6 @@
 
 from rest_framework.serializers import ModelSerializer
 
-from Stargate.utils.views import TreeSerializer
 from .models import AppID, WxMsgLogs
 from rest_framework import serializers
 
