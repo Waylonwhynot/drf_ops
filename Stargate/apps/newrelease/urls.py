@@ -6,6 +6,6 @@ router = SimpleRouter()
 router.register('releaseapp', views.ReleaseView, 'ReleaseAppView')
 
 urlpatterns = [
-    # path('hosttype/', views.HostTypeAPIView.as_view(), name='host_type_view'),
+    path('new_release/', views.NewRelease.as_view(), name="create_new_release"),
     path('', include(router.urls))
 ]
