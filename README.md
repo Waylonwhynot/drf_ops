@@ -45,6 +45,18 @@
 ###  任务系统
 ![image](https://user-images.githubusercontent.com/42118870/151673878-a404f09b-456b-4cc2-b22d-3e61d2b49f7f.png)
 ![image](https://user-images.githubusercontent.com/42118870/151673885-99340955-c62c-459b-a329-b60814bcd66f.png)
+### 发布系统优化
+#### 应用页面
+![image](https://user-images.githubusercontent.com/42118870/154548438-cb2c09c3-01d1-4e40-b2d0-813d6626379a.png)
+#### 添加应用发布
+![image](https://user-images.githubusercontent.com/42118870/154548513-54392d11-0ee9-4274-96dc-b49425ea170b.png)
+#### 新建常规发布
+![image](https://user-images.githubusercontent.com/42118870/154548549-2716c6db-c405-410d-9c36-77f8947d9383.png)
+![image](https://user-images.githubusercontent.com/42118870/154548605-6e169304-b533-43f3-9262-5feb42cd671b.png)
+![image](https://user-images.githubusercontent.com/42118870/154548668-9c1ca3eb-f58d-49a4-9595-b43b60b30e5b.png)
+![image](https://user-images.githubusercontent.com/42118870/154548744-e41958bf-d262-41a1-beba-91a2226e1faa.png)
+![image](https://user-images.githubusercontent.com/42118870/154548792-6ddf35da-c8c4-4745-b8e6-a06abaf818d6.png)
+
 ### 发布系统
 ####  项目列表（调用gitab api）
 ![image](https://user-images.githubusercontent.com/42118870/151673896-daf7de93-0b8f-4764-a99e-b07d588079b4.png)
