@@ -68,4 +68,38 @@ class ReleaseRecordDetail(BaseModel):
                                verbose_name='发布记录')
     hosts = models.ForeignKey(Host, on_delete=models.CASCADE, related_name='release_host', verbose_name='发布的主机')
 
+# 先进行发布，然后进行发布申请，在发布申请阶段进行真正的发布流程
+# 发布申请记录表
+class ReleaseApply(BaseModel):
+
+    release_status_choices = (
+        ('1', '待审核'),
+        ('2', '待发布'),
+        ('3', '发布成功'),
+        ('4', '发布异常'),
+        ('5', '其他'),
+    )
+
+    branch_or_tag_choices = (
+        ('1', '分支'),
+        ('2', '标签'),
+    )
+
+    apply_title = models.CharField(max_length=64, verbose_name='申请标题')
+
+    release_record = models.ForeignKey('ReleaseRecord', on_delete=models.CASCADE, verbose_name='发布记录', related_name='release_record_apply')
+
+    # git_release_branch = models.CharField(max_length=128,verbose_name='分支',null=True, blank=True)
+    # git_release_tag = models.CharField(max_length=128,verbose_name='git标签',null=True, blank=True)
+    git_release_branch_or_tag = models.CharField(max_length=128, verbose_name='分支/标签', choices=branch_or_tag_choices, default=1)
+    git_release_version = models.CharField(max_length=128, verbose_name='发布版本(其实是哪个分支或者哪个标签)')
+    git_release_commit_id = models.CharField(max_length=256,verbose_name='git_commit_id',null=True,blank=True)
+
+    release_status = models.CharField(choices=release_status_choices, default=1, verbose_name='状态',max_length=32)
+    release_desc = models.TextField(verbose_name='备注信息',null=True,blank=True)
+    user = models.ForeignKey(User, verbose_name='申请人', on_delete=models.CASCADE, related_name='release_apply_user')
+
+    def git_release_branch_or_tag_name(self):
+        return self.get_git_release_branch_or_tag_display()
+
 

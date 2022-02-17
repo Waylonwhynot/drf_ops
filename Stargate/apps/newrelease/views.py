@@ -8,8 +8,8 @@ from rest_framework.views import APIView
 from utils.pagination import BasicPagination
 from utils.response import APIResponse
 from utils.views import CommonModelViewSet
-from .models import ReleaseApp, ReleaseRecord, ReleaseRecordDetail
-from .serializer import ReleaseModelSerializer
+from .models import ReleaseApp, ReleaseRecord, ReleaseRecordDetail, ReleaseApply
+from .serializer import ReleaseModelSerializer, ReleaseApplyModelSerializer
 import logging
 
 logger = logging.getLogger('error')
@@ -27,6 +27,7 @@ class NewRelease(APIView):
     """
     新建发布
     """
+
     def post(self, request):
         print('新建发布的数据： ', request.data)
         # 按理来讲，应该对数据进行校验，我这里就不做了，直接保存
@@ -83,3 +84,18 @@ class NewRelease(APIView):
 	'after_release_value': 'mkdir vvv' 代码发布后执行的指令
 }
 """
+
+
+class ReleaseApply(CommonModelViewSet):
+    queryset = ReleaseApply.objects.filter(is_show=True, is_deleted=False)
+    serializer_class = ReleaseApplyModelSerializer
+    pagination_class = BasicPagination
+    filter_backends = [SearchFilter]
+    search_fields = ['name']
+
+
+# 获取发布申请的状态数据
+class ReleaseApplyStatus(APIView):
+    def get(self, request):
+        status = ReleaseApply.release_status_choices
+        return APIResponse(data={'status_data': status})
