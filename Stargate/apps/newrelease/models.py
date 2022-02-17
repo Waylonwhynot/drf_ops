@@ -39,7 +39,7 @@ class ReleaseRecord(BaseModel):
     release_app = models.ForeignKey(ReleaseApp, on_delete=models.CASCADE, related_name='release_appliction', default=1,
                                     verbose_name='发布从属应用')
 
-    envs = models.ForeignKey(Environment, on_delete=models.CASCADE, related_name='release_envs', verbose_name='发布环境')
+    env = models.ForeignKey(Environment, on_delete=models.CASCADE, related_name='release_envs', verbose_name='发布环境')
     code_git_addr = models.CharField(max_length=128, verbose_name='Git仓库地址,注意我们使用的是ssh地址')
     # 应该加一个项目名称字段，因为我们将来可能要存储多个项目，通过项目名称进行区分和作为将来存放该项目的目录名称
     # git_project_name = models.CharField(max_length=128,verbose_name='项目名称\目录名称')
