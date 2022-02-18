@@ -29,11 +29,15 @@ def read_host_excel_data(host_excel_file_path, default_password=''):
         category = sheet.cell_value(row_number, 0)
 
         # 由于拿到的是分类名称，所以我们要找到对应名称的分类id，才能去数据库里面存储
+        print('>>>>>>category_list', category_list)
         for category_data in category_list:
+            print('>>>>>>>>category_data', category_data)
+            print('>>>>>>>>category', category)
             # 如果数据库里有，就找到对应类型的id
             if category_data[1].strip() == category.strip():
                 one_row_dict['category'] = category_data[0]
                 break
+        if not one_row_dict['category']:
             # 如果没有这个类型的数据，就创建这个类型的数据
             category_obj = HostCategory.objects.create(name=category.strip())
             one_row_dict['category'] = category_obj.id

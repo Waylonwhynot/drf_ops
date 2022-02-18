@@ -56,7 +56,10 @@ INSTALLED_APPS = [
     'projects',
     'host',
     'consumer',
+    'mtask',
+    'confcenter',
     'release',
+    'newrelease',
     'drf_yasg',
     'django_python3_ldap',
 ]

@@ -11,3 +11,6 @@ JENKINS_URL = "http://10.0.0.88:8080/"
 JENINS_TOKEN = "119bb43e7e38a235b803789b3e3f2f7a6f"
 JENKINS_USERNAME = 'admin'
 JENKINS_PASSWORD = 'admin'
+
+
+GIT_CODE_DIR = '/Users/waylonyan/PycharmProjects/git_code_dir'  #git clone的代码存放目录

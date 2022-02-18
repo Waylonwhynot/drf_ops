@@ -15,7 +15,7 @@ import logging
 logger = logging.getLogger('error')
 
 
-class ReleaseView(CommonModelViewSet):
+class ReleaseAppView(CommonModelViewSet):
     queryset = ReleaseApp.objects.all()
     serializer_class = ReleaseModelSerializer
     pagination_class = BasicPagination
@@ -86,7 +86,7 @@ class NewRelease(APIView):
 """
 
 
-class ReleaseApply(CommonModelViewSet):
+class ReleaseApplyView(CommonModelViewSet):
     queryset = ReleaseApply.objects.filter(is_show=True, is_deleted=False)
     serializer_class = ReleaseApplyModelSerializer
     pagination_class = BasicPagination
@@ -96,6 +96,58 @@ class ReleaseApply(CommonModelViewSet):
 
 # 获取发布申请的状态数据
 class ReleaseApplyStatus(APIView):
+    choice = ReleaseApply.release_status_choices
+
     def get(self, request):
-        status = ReleaseApply.release_status_choices
-        return APIResponse(data={'status_data': status})
+        methods = [[value[0], value[1]] for value in self.get_choice()]
+        return APIResponse(data={'results': methods})
+
+    def get_choice(self):
+        assert self.choice is not None, (
+                "'%s' 应该包含一个`choice`属性，或覆盖`get_choice()`方法"
+                % self.__class__.__name__
+        )
+        assert isinstance(self.choice, tuple) and len(self.choice) > 0, 'choice数据错误, 应为二元组'
+        for values in self.choice:
+            assert isinstance(values, tuple) and len(values) == 2, 'choice数据错误, 应该为二维数组'
+        return self.choice
+
+
+# 获取不同环境下的应用数据
+class EnvsAppsView(APIView):
+
+    def get(self, request):
+        # 获取环境id
+        envs_id = request.query_params.get('envs_id')
+        envs_apps_data = list(ReleaseRecord.objects.filter(env_id=envs_id).values(
+            'release_app__id',
+            'release_app__name',
+        ).distinct())  # 别忘了去重
+        return APIResponse(data=envs_apps_data)
+
+
+from django.conf import settings
+from utils.git_operations import get_git_branchs
+from utils.git_operations import get_git_commits
+
+
+class GitBranchView(APIView):
+
+    def get(self, request):
+        app_id = request.query_params.get('app_id')
+        # 先找到该应用的新建的最新发布记录
+        release_record_obj = ReleaseRecord.objects.filter(is_show=True, is_deleted=False,
+                                                          release_app_id=app_id).order_by('-created_time').first()
+        git_code_dir = settings.GIT_CODE_DIR
+        git_remote_attr = release_record_obj.code_git_addr
+        # 获取git仓库的分支数据
+        git_branch_list = get_git_branchs(git_remote_attr, git_code_dir)
+
+        # 获得branch -- master等分支的所有提交版本
+        branches_name = request.query_params.get('branches')  # master or dev
+
+        git_code_dir = settings.GIT_CODE_DIR
+        commits = get_git_commits(branches_name, git_remote_attr, git_code_dir)
+
+        return APIResponse(
+            data={'branch_list': git_branch_list, 'commits': commits, 'release_record_id': release_record_obj.id})
