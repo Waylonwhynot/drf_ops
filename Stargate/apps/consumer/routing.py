@@ -9,6 +9,7 @@ ws_router = AuthMiddleware(
     URLRouter([
         # path('ws/exec/<str:token>/', ExecConsumer),
         path('ws/ssh/<int:id>/', SSHConsumer),
+        path('ws/release/<int:id>/', ReleaseConsumer),
     ])
 )
 

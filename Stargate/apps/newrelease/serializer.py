@@ -36,17 +36,19 @@ class ReleaseApplyModelSerializer(serializers.ModelSerializer):
         model = ReleaseApply
         fields = ['id', 'apply_title', 'app_name', 'envs_name', 'git_release_branch_or_tag',
                   'git_release_branch_or_tag_name', 'git_release_version', 'release_status',
-                  'get_release_status_display', 'username', 'created_time', 'release_record', ]
+                  'get_release_status_display', 'username', 'created_time', 'release_record', 'review_user','review_desc']
         # branch_or_tag_choices为发布申请的状态数据
         extra_kwargs = {
-            'release_status': {'read_only': True},
+            'id': {'read_only': True},
             'created_time': {'read_only': True},
-
+            'git_release_branch_or_tag_name': {'read_only': True},
+            'get_release_status_display': {'read_only': True},
         }
 
     # 对数据进行额外的校验
-    # def validate(self, attrs):
-    #     pass
+    def validate(self, attrs):
+        print(attrs)
+        return attrs
 
     # 自定定制create，因为保存的数据不仅仅是用提交过来的数据，并且该方法的返回值是新创建的记录的模型类对象
     def create(self, validated_data):

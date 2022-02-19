@@ -103,6 +103,13 @@ class ReleaseApply(BaseModel):
     release_status = models.CharField(choices=release_status_choices, default=1, verbose_name='状态', max_length=32)
     release_desc = models.TextField(verbose_name='备注信息', null=True, blank=True)
     user = models.ForeignKey(User, verbose_name='申请人', on_delete=models.CASCADE, related_name='release_apply_user')
+    review_user = models.ForeignKey(User, verbose_name='审核人', on_delete=models.CASCADE,
+                                    related_name='release_apply_review_user', null=True, blank=True)
+
+    review_desc = models.CharField(max_length=128, null=True, blank=True, verbose_name='审核意见')
+
+    release_user = models.ForeignKey(User, verbose_name='发布人', on_delete=models.CASCADE,
+                                     related_name='release_apply_release_user', null=True, blank=True)
 
     def git_release_branch_or_tag_name(self):
         return self.get_git_release_branch_or_tag_display()
