@@ -6,9 +6,9 @@ from .models.model import Info, Group, InfoRelatedType, InfoRelated, FieldGroup,
 from .models.resources import Data, DataRelated
 from .models.tags import Tag, DataTagRelated
 
-admin.site.site_title = "Stargate | JiDU InfraOps" # html-title
-admin.site.site_header = "Stargate | 集度汽车"  # 后台登录页以及登录后侧边栏头部
-admin.site.index_title = "Stargate | JiDU" #登录后首页标题
+admin.site.site_title = "Stargate" # html-title
+admin.site.site_header = "Stargate"  # 后台登录页以及登录后侧边栏头部
+admin.site.index_title = "Stargate" #登录后首页标题
 
 # Register your models here.
 admin.site.register(Info)
