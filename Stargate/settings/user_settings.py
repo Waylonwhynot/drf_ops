@@ -13,4 +13,6 @@ JENKINS_USERNAME = 'admin'
 JENKINS_PASSWORD = 'admin'
 
 
-GIT_CODE_DIR = '/Users/waylonyan/PycharmProjects/git_code_dir'  #git clone的代码存放目录
+GIT_CODE_DIR = '/Users/waylonyan/PycharmProjects/git_code_dir'  #git clone的代码存放目录，主要是新建发布记录的时候选取分支用的
+
+RELEASE_LOCAL_PATH = '/Users/waylonyan/PycharmProjects/workspace'
