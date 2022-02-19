@@ -26,6 +26,10 @@
 - 简单运维工单模型
 - 资产管理(支持excel导入，批量导出)，支持webshell执行命令，支持向主机导入文件
 - 发布系统：项目名称gitlab和jenkins项目名称必须一样（后面优化）
+- 告警中心：接受zabbix 和 Promethues 告警（告警分类统计）
+- 代码上线: 基于Paramiko进行代码发布（附带审核）
+- 批量任务
+- 定时任务（基于Celery）
 ###  登录页面
 ![image](https://user-images.githubusercontent.com/42118870/151673686-1fc42639-1b1d-4fe0-a169-0404784b388a.png)
 ###  首页
@@ -101,5 +105,8 @@
 ![image](https://user-images.githubusercontent.com/42118870/154121342-ccec78ee-c332-4f0c-827f-c191ca1934e5.png)
 ![image](https://user-images.githubusercontent.com/42118870/154121385-95feb410-680d-49a3-b0dc-e536fca88da8.png)
 
+### 告警中心
+![image](https://user-images.githubusercontent.com/42118870/154818326-e5346bdc-3d50-4a79-85b2-74569df508d2.png)
+![image](https://user-images.githubusercontent.com/42118870/154818325-eef9d980-9902-47ec-aa0a-6894d1ad1f84.png)
 
 
