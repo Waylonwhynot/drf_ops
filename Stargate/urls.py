@@ -48,6 +48,8 @@ urlpatterns = [
     path('api/mtask/', include('mtask.urls')),
     path('api/confcenter/', include('confcenter.urls')),
     path('api/newrelease/', include('newrelease.urls')),
+    path('api/monitor/', include('monitor.urls')),
+    path('api/dashboard/', include('dashboard.urls')),
 
 
     # 配置drf-yasg路由

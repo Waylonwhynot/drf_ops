@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'user',
     'cmdb',
     'msg',
+    'monitor',
+    'dashboard',
     'autotask',
     'workorder',
     'projects',
