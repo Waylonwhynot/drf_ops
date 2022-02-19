@@ -56,6 +56,21 @@
 ![image](https://user-images.githubusercontent.com/42118870/154548668-9c1ca3eb-f58d-49a4-9595-b43b60b30e5b.png)
 ![image](https://user-images.githubusercontent.com/42118870/154548744-e41958bf-d262-41a1-beba-91a2226e1faa.png)
 ![image](https://user-images.githubusercontent.com/42118870/154548792-6ddf35da-c8c4-4745-b8e6-a06abaf818d6.png)
+#### 发布申请
+![image](https://user-images.githubusercontent.com/42118870/154811092-d069a8df-0af8-49ee-a57d-b053a76ed664.png)
+#### 新建发布申请
+![image](https://user-images.githubusercontent.com/42118870/154811110-f7403123-680b-470d-892f-4719600103b7.png)
+#### 待审核
+![image](https://user-images.githubusercontent.com/42118870/154811151-4506b020-de33-4c1d-948f-17a76c0255f0.png)
+#### 审核
+![image](https://user-images.githubusercontent.com/42118870/154811164-a7cfb4b3-990a-4354-bd79-cbec0e6c2445.png)
+#### 点击发布
+![image](https://user-images.githubusercontent.com/42118870/154811179-b41faa24-ebdd-46fd-b8e1-a0975f956b56.png)
+
+#### 发布结果
+![image](https://user-images.githubusercontent.com/42118870/154811069-23796540-17c0-48bf-8daa-36e8eef50221.png)
+
+
 
 ### 发布系统
 ####  项目列表（调用gitab api）
