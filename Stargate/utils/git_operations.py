@@ -24,7 +24,7 @@ def get_git_branchs(git_addr, git_code_dir):
 
     # 6 发布后，对目标主机执行的动作
 
-    # 'git@gitee.com:clschao/hippo.git'
+    # 'git@gitee.com:sssaa/Stargate.git'
     git_pro_name = git_addr.rsplit('/')[-1].split('.')[0]
     print(git_pro_name)
 

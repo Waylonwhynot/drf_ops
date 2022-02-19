@@ -72,7 +72,7 @@ class NewRelease(APIView):
 	'msg_content': 消息通知内容
 	#  'release_status': 1, #发布状态  这个放到发布申请的表中了
 	'target_host_pub_path': '/var/www/html', 代码发布到目标主机的路径
-	'target_host_repository_path': '/data/hippo/repos', 代码版本管理目录
+	'target_host_repository_path': '/data/repos', 代码版本管理目录
 	'keep_history_count': '10', 代码版本存储个数
 	'pub_target_host_choose': [11, 10], 目标主机的id列表
 	'filefilterway': 1,  # 文件过滤方式 1表示包含，2表示过滤
