@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-@author   : Wenliang.Yan
-@Dep      : Jiduauto_Infra 
-@file     : home_task.py
-@create   : 2022/1/10 3:54 下午
-"""
+
 from .celery import app
 from django_redis import get_redis_connection
 from Stargate.libs.bce import bceclient

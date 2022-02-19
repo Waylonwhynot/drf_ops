@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-@author   : Wenliang.Yan
-@Dep      : Jiduauto_Infra 
-@file     : send_alert_task.py
-@create   : 2022/1/11 6:24 下午
-"""
+
 
 from .celery import app
 

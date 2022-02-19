@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-@author   : Wenliang.Yan
-@Dep      : Jiduauto_Infra 
-@file     : bceclient.py
-@create   : 2022/1/7 2:06 上午
-"""
+
 # import settings
 from . import settings
 import requests

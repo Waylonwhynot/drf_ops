@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-@author   : Wenliang.Yan
-@Dep      : Jiduauto_Infra 
-@file     : bcesdk.py
-@create   : 2022/1/7 2:07 上午
-"""
+
 
 import baidubce
 from baidubce.auth.bce_credentials import BceCredentials

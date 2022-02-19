@@ -1,12 +1,7 @@
 # -*- coding: utf-8 -*-
-"""
-@author   : Wenliang.Yan
-@Dep      : Jiduauto_Infra 
-@file     : settings.py
-@create   : 2022/1/7 2:06 上午
-"""
-AK = '4cee475e7a7d44d3b9f384bf6b82ccca'
-SK = 'f5975feb10334c5194d5118aced5c6cf'
+
+AK = ''
+SK = ''
 
 BCCHOST = 'bcc.su.baidubce.com'
 BLBHOST = 'blb.su.baidubce.com'

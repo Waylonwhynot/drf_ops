@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-@author   : Wenliang.Yan
-@Dep      : Jiduauto_Infra 
-@file     : celery.py
-@create   : 2022/1/10 1:54 下午
-"""
+
 import celery
 import os
 
