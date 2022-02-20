@@ -29,7 +29,7 @@
 - 告警中心：接受zabbix 和 Promethues 告警（告警分类统计）
 - 代码上线: 基于Paramiko进行代码发布（附带审核）
 - 批量任务
-- 定时任务（基于Celery）
+- 定时任务（基于django-celery-beat）
 ###  登录页面
 ![image](https://user-images.githubusercontent.com/42118870/151673686-1fc42639-1b1d-4fe0-a169-0404784b388a.png)
 ###  首页
@@ -109,4 +109,5 @@
 ![image](https://user-images.githubusercontent.com/42118870/154818326-e5346bdc-3d50-4a79-85b2-74569df508d2.png)
 ![image](https://user-images.githubusercontent.com/42118870/154818325-eef9d980-9902-47ec-aa0a-6894d1ad1f84.png)
 
-
+### 定时任务（待完善结果页面-关联主机-定时任务启动停止）
+![image](https://user-images.githubusercontent.com/42118870/154835396-6ad6cf34-841b-4b3d-a3bf-a05ac87eedce.png)
