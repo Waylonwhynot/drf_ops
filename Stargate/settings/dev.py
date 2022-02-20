@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'cmdb',
     'msg',
     'monitor',
+    'schedule',
     'dashboard',
     'autotask',
     'workorder',
@@ -62,6 +63,7 @@ INSTALLED_APPS = [
     'confcenter',
     'release',
     'newrelease',
+    'django_celery_beat',
     'drf_yasg',
     'django_python3_ldap',
 ]
@@ -375,3 +377,9 @@ SIMPLEUI_HOME_INFO = False  # 设置admin站点不显示simpleui的git页
 
 # 自定义配置
 from .user_settings import *
+
+
+# celery beat配置
+
+CELERY_ENABLE_UTC = False
+DJANGO_CELERY_BEAT_TZ_AWARE = False

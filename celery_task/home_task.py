@@ -8,7 +8,7 @@ import json
 
 # 首页饼图
 @app.task
-def update_dashboard(bind=True):
+def update_dashboard():
     # 直接写入/更新redis
     res_blb = bceclient.list_blb()
     res_app_blb = bceclient.list_app_blb()

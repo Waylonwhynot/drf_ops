@@ -50,6 +50,7 @@ urlpatterns = [
     path('api/newrelease/', include('newrelease.urls')),
     path('api/monitor/', include('monitor.urls')),
     path('api/dashboard/', include('dashboard.urls')),
+    path('api/schedule/', include('schedule.urls')),
 
 
     # 配置drf-yasg路由
