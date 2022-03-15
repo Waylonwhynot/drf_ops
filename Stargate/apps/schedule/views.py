@@ -14,6 +14,9 @@ from utils.response import APIResponse
 
 
 class PeriodView(APIView):
+    """
+    # 返回周期方式
+    """
     def get(self,request):
         data = models.TaskSchedule.period_way_choices
 
